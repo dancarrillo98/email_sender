@@ -92,7 +92,7 @@ def email_sender( contact_email, contact_name ):
   message = MIMEMultipart()
   message[ 'From' ] = email_address.get()
   message[ 'To' ] = contact_email
-  message[ 'From' ] = subject.get()
+  message[ 'Subject' ] = subject.get()
   
   try:
     msg = template.substitute( NAME = contact_name )
@@ -179,7 +179,7 @@ def text_document():
 # making the main pane, setting its geometry, and setting the title
 tk = Tk()
 tk.geometry( "500x400" )
-tk.title( "Lab e-Sender" )
+tk.title( "e-Sender" )
 
 # making the tab manager and calling the different tab constructors
 tab_manager = ttk.Notebook( tk )
@@ -193,7 +193,7 @@ tab_manager.add( input_tab, text = "Email, Documents, and Send Button" )
 tab_manager.pack( expand = 1, fill = "both" )
 
 # populating the instructions tab
-title = "Lab e-Sender"
+title = "e-Sender"
 setup = "Welcome to Lab e-Sender, a program designed to help\
  you get into labs faster by using a python program to read a text file\
  and an excel document to send mass emails from your school email\
